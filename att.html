@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript" src="jquery-3.3.1.js"></script>
+</head>
+<body>
+		
+	<script type="text/javascript">
+	
+		var div=$("<div>");
+		$('body').append(div);
+		$(div).attr("align","center");
+		var img=[];
+		for(var i=0; i<=3; i++){
+			img[i]=$("<img>");
+			var str="img/0"+(i+1)+".png";
+			$(img[i]).attr("src",str);
+			$('div').append(img[i]);
+			var br=$("<br>");
+			$('div').append(br);
+		}
+		$(document).keyup(function(e) {
+		if (e.key === "Left" || e.keyCode === 37) {
+			$('img').animate({
+				"paddingLeft":"+=0px",
+				"paddingRight":"+=100px",
+				},200);
+		}else if (e.key === "Right" || e.keyCode === 39) {
+			$('img').animate({
+				"paddingLeft":"+=100px",
+				"paddingRight":"+=0px",
+				},200);
+		}
+		});
+		
+	</script>
+</body>
+</html>
+
+<!---->
+		
